@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Launcher icon foreground: a white "screen" card with two text lines and
+  a right-pointing translate arrow, drawn on a 108x108 viewport (the
+  adaptive-icon safe zone is the centre 66x66 — all shapes stay inside it).
+-->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <!-- White card -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M28,16h52a8,8 0 0,1 8,8v44a8,8 0 0,1 -8,8H28a8,8 0 0,1 -8,-8V24a8,8 0 0,1 8,-8z" />
+    <!-- Text line 1 -->
+    <path
+        android:fillColor="#0F766E"
+        android:pathData="M28,30h52v7H28z" />
+    <!-- Text line 2 -->
+    <path
+        android:fillColor="#0F766E"
+        android:pathData="M28,44h34v7H28z" />
+    <!-- Translate arrow -->
+    <path
+        android:fillColor="#0F766E"
+        android:pathData="M28,60h30v-4l16,7.5L58,71v-4H28z" />
+</vector>

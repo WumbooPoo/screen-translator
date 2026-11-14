@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Adaptive launcher icon (API 26+). The foreground is a vector drawable
+  (a "screen" card with text lines and a translate arrow); the background
+  is a solid teal. No PNG assets are bundled — minSdk is 26, so the
+  anydpi-v26 adaptive icon covers every supported device.
+-->
+<adaptive-icon xmlns:android="http://schemas.android.com/apk/res/android">
+    <background android:drawable="@color/ic_launcher_background" />
+    <foreground android:drawable="@drawable/ic_launcher_foreground" />
+</adaptive-icon>
