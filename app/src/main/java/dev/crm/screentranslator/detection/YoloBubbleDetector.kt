@@ -151,7 +151,7 @@ class YoloBubbleDetector(
         )
         val result = activeSession.run(mapOf(inName to inputTensor))
         return try {
-            val output = result.get(outName) ?: return emptyList()
+            val output = result.get(outName).orElse(null) ?: return emptyList()
             parseDetections(output, bitmap.width, bitmap.height, scale, padX, padY)
         } finally {
             inputTensor.close()
@@ -186,7 +186,8 @@ class YoloBubbleDetector(
         fun cell(n: Int, c: Int): Float =
             if (channelsFirst) value[0][c][n] else value[0][n][c]
 
-        val boxes = ArrayList<Box>(64)        for (n in 0 until count) {
+        val boxes = ArrayList<Box>(64)
+        for (n in 0 until count) {
             var bestScore = 0f
             for (c in 0 until numClasses) {
                 bestScore = max(bestScore, cell(n, 4 + c))

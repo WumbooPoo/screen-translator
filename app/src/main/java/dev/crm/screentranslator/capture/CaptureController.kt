@@ -89,7 +89,7 @@ class CaptureController(
         val pixels = IntArray(160 * 90)
         small.getPixels(pixels, 0, 160, 0, 0, 160, 90)
         if (small != frame) small.recycle()
-        var hash = 0xcbf29ce484222325L
+        var hash = -3750763034362895579L // FNV-1a offset basis (0xcbf29ce484222325 as signed Long)
         for (p in pixels) {
             val luma = (((p shr 16) and 0xFF) * 3 + ((p shr 8) and 0xFF) * 6 +
                 (p and 0xFF)) / 10
