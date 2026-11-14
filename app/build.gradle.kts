@@ -77,8 +77,8 @@ dependencies {
     implementation(libs.androidx.compose.ui.tooling.preview)
     implementation(libs.androidx.compose.material3)
     implementation(libs.androidx.compose.runtime)
-    implementation(libs.androidx.lifecycle.runtime.compose)
-    implementation(libs.androidx.lifecycle.viewmodel.compose)
+    // Coroutines Play-services bridge (kotlinx.coroutines.tasks.await).
+    implementation(libs.kotlinx.coroutines.play.services)
 
     // On-device inference
     // ONNX Runtime: YOLO11n bubble detector (download-on-demand model).
