@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Screen Translator</string>
+
+    <!-- Home -->
+    <string name="home_title">Screen Translator</string>
+    <string name="home_subtitle">Terjemahkan apa pun di layar — offline, tanpa iklan.</string>
+    <string name="btn_start">Mulai Menerjemahkan</string>
+    <string name="btn_stop">Berhenti</string>
+    <string name="engine_label">Mesin terjemah</string>
+    <string name="engine_offline">Offline (ML Kit)</string>
+    <string name="engine_online">Online (LibreTranslate)</string>
+    <string name="engine_google">Google Cloud (nanti)</string>
+    <string name="engine_ai_later">AI (nanti)</string>
+    <string name="source_lang">Bahasa sumber</string>
+    <string name="target_lang">Bahasa tujuan</string>
+    <string name="auto_detect">Otomatis</string>
+    <string name="bubble_hint">Ketuk gelembung mengambang untuk menerjemahkan layar.</string>
+    <string name="bubble_card_title">Gelembung mengambang</string>
+    <string name="bubble_card_desc">Tombol kecil yang nempel di tepi layar. Ketuk untuk menerjemahkan, geser untuk memindah.</string>
+
+    <!-- Permissions -->
+    <string name="perm_overlay_title">Izin tampil di atas aplikasi lain</string>
+    <string name="perm_overlay_desc">Dibutuhkan untuk gelembung mengambang dan kotak terjemahan.</string>
+    <string name="perm_overlay_btn">Beri izin</string>
+    <string name="perm_notification_title">Izin notifikasi</string>
+    <string name="perm_notification_desc">Dibutuhkan untuk layanan perekaman layar di latar depan.</string>
+    <string name="perm_notification_btn">Beri izin</string>
+    <string name="perm_capture_btn">Izinkan perekaman layar</string>
+    <string name="capture_active">Perekaman layar aktif</string>
+    <string name="capture_active_desc">Ketuk gelembung untuk menerjemahkan layar.</string>
+    <string name="capture_stop_action">Berhenti</string>
+
+    <!-- Settings -->
+    <string name="settings_title">Pengaturan</string>
+    <string name="settings_appearance">Tampilan terjemahan</string>
+    <string name="settings_opacity">Transparansi latar</string>
+    <string name="settings_floating_icon">Ikon mengambang</string>
+    <string name="settings_bubble_size">Ukuran gelembung</string>
+    <string name="settings_snap_edge">Tempel otomatis ke tepi</string>
+    <string name="settings_other">Lainnya</string>
+    <string name="settings_manga_mode">Mode manga</string>
+    <string name="settings_manga_desc">Deteksi balon, urutan baca kanan-ke-kiri, dan OCR manga.</string>
+    <string name="settings_sfx">Terjemahkan SFX</string>
+    <string name="settings_sfx_desc">Suara efek (mis. ドキドキ). Mati secara default.</string>
+    <string name="settings_wifi_only">Unduh model hanya via Wi-Fi</string>
+    <string name="settings_models">Kelola model</string>
+
+    <!-- Engine picker -->
+    <string name="engine_picker_title">Pilih Mesin</string>
+    <string name="engine_offline_desc">ML Kit di perangkat. Gratis, tanpa internet setelah model diunduh.</string>
+    <string name="engine_online_desc">LibreTranslate. Gratis, butuh internet, instance bisa diganti.</string>
+    <string name="engine_google_desc">Butuh API key Google Cloud. Belum tersedia di V1.</string>
+    <string name="engine_ai_desc">Gemini / ChatGPT. Hadir nanti — tanpa premium.</string>
+
+    <!-- Model manager -->
+    <string name="models_title">Model</string>
+    <string name="models_desc">Model diunduh sesuai kebutuhan, tidak dibundel di APK.</string>
+    <string name="model_download">Unduh</string>
+    <string name="model_delete">Hapus</string>
+    <string name="model_downloaded">Terunduh</string>
+    <string name="model_not_downloaded">Belum diunduh</string>
+    <string name="model_size_unknown">Ukuran dicek saat unduh</string>
+    <string name="model_wifi_required">Butuh Wi-Fi (ubah di Pengaturan)</string>
+</resources>
