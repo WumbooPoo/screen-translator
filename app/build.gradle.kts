@@ -1,6 +1,9 @@
+// AGP 9.0+ has built-in Kotlin: do NOT apply org.jetbrains.kotlin.android
+// (applying it fails the build in AgpWithBuiltInKotlinAppliedCheck —
+// AGP applies the Kotlin Gradle plugin itself). The Compose compiler
+// plugin below is still applied explicitly.
 plugins {
     alias(libs.plugins.android.application)
-    alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
 }
 
@@ -51,10 +54,6 @@ android {
         targetCompatibility = JavaVersion.VERSION_17
     }
 
-    kotlinOptions {
-        jvmTarget = "17"
-    }
-
     buildFeatures {
         compose = true
     }
@@ -64,6 +63,15 @@ android {
             // ONNX Runtime + LiteRT ship duplicate META-INF files; pick first.
             excludes += "/META-INF/{AL2.0,LGPL2.1}"
         }
+    }
+}
+
+// Built-in Kotlin (AGP 9.0+): configure the Kotlin compiler via the
+// kotlin.compilerOptions DSL — android.kotlinOptions was removed in AGP 9.
+// The `kotlin` extension is registered by AGP's built-in KGP itself.
+kotlin {
+    compilerOptions {
+        jvmTarget = org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_17
     }
 }
 

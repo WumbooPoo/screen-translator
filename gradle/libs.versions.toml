@@ -55,5 +55,7 @@ okhttp = { group = "com.squareup.okhttp3", name = "okhttp", version.ref = "okhtt
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
-kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+# NOTE (AGP 9.0+ built-in Kotlin): org.jetbrains.kotlin.android must NOT be
+# declared or applied — AGP applies the Kotlin Gradle plugin itself.
+# The kotlin-compose plugin below is still applied explicitly.
 kotlin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
