@@ -17,12 +17,6 @@ android {
         targetSdk = 35
         versionCode = 1
         versionName = "0.1.0"
-
-        // Keep native libs small: ship only the two ABIs that matter.
-        // Most modern phones are arm64-v8a.
-        ndk {
-            abiFilters += listOf("arm64-v8a", "armeabi-v7a")
-        }
     }
 
     buildTypes {
