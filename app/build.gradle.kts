@@ -9,7 +9,17 @@ plugins {
 
 android {
     namespace = "dev.crm.screentranslator"
-    compileSdk = 36
+    // compileSdk 37: Compose 1.12.1 (BOM 2026.09.00) and core-ktx 1.19.1
+    // declare minCompileSdk=37 in their AAR metadata (9+ modules:
+    // animation-core, animation, foundation, ui, ui-graphics, ui-text,
+    // runtime-saveable, core, core-ktx) — checkDebugAarMetadata fails the
+    // build against compileSdk 36. AGP 9.5 supports API 37 at most, and
+    // the ubuntu-latest runner image already ships platform android-37.2
+    // + build-tools 37.0.0, so no workflow change is needed.
+    // targetSdk (35) and minSdk (26) are independent of compileSdk and
+    // stay as they are.
+    compileSdk = 37
+    buildToolsVersion = "37.0.0"
 
     defaultConfig {
         applicationId = "dev.crm.screentranslator"
