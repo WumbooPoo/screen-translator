@@ -1,5 +1,10 @@
-# Builds the arm64-v8a debug APK on every push to main and uploads it
+# Builds the debug APK on every push to main and uploads it
 # as a workflow artifact (screen-translator-debug-apk).
+#
+# NOTE: AGP 9 removed ABI splits, so there is no per-ABI assemble task
+# anymore — the build produces one universal debug APK (native libs are
+# limited to arm64-v8a + armeabi-v7a via ndk abiFilters in
+# app/build.gradle.kts).
 #
 # NOTE: this project has no Gradle Wrapper jar committed yet (the wrapper
 # jar is binary and cannot be pushed through the GitHub connector), so CI
@@ -8,7 +13,7 @@
 # gradle/wrapper/gradle-wrapper.properties. Once a wrapper jar exists in
 # the repo (generate it with `gradle wrapper` on a machine where Gradle
 # runs, e.g. inside Android Studio), switch the build step back to
-# `./gradlew assembleArm64-v8aDebug`.
+# `./gradlew assembleDebug`.
 
 name: Android Debug Build
 
@@ -35,12 +40,12 @@ jobs:
         with:
           gradle-version: '9.6.0'
 
-      - name: Build arm64 debug APK
-        run: gradle assembleArm64-v8aDebug --stacktrace
+      - name: Build debug APK
+        run: gradle assembleDebug --stacktrace
 
       - name: Upload debug APK
         uses: actions/upload-artifact@v4
         with:
           name: screen-translator-debug-apk
-          path: app/build/outputs/apk/arm64-v8a/debug/*.apk
+          path: app/build/outputs/apk/debug/*.apk
           if-no-files-found: error
